@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@font-face {
+    font-family: 'Numbers';
+    src: url(../fonts/7fonts.ru_DS-DIGI.TTF);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url(../img/dust.1770c15.png), url(../img/Q0VayJLx56Q.jpg);
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 99999;
+    color: black;
+    font-size: 40px;
+}
+
+.preloader img {
+    width: 90px;
+    height: 90px;
+    animation: pred 1s infinite linear;
+}
+
+.preloader p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes pred {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.done {
+    display: none;
+}
+
+/* КНОПКА МЕНЮ */
+.btnMenu {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 9999;
+    cursor: pointer;
+    color: black;
+    font-size: 45px;
+}
+.menuPanel{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.rowA > i{
+    font-weight: bold;
+    font-size: 35px;
+    padding: 20px 0 0 10px;
+    cursor: pointer;
+}
+.menuwrapper{
+    height: 100%;
+    width: 35%;
+    background-image: url(../img/2zyS3Vb77fW0.jpg);
+    background-size: cover;
+    background-position: -100%;
+    border-right: 2px solid black; 
+}
+.rowA{
+    display: flex;
+    justify-content: left;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+.left{
+    margin-right: 10px;
+}
+.middle{
+    margin: 0 20px;
+}
+.right{
+    margin-left: 10px;
+}
+.menuPanel span{
+    display: block;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid black;
+    transition: .2s;
+}
+.menuPanel span:hover{
+    background-color: black;
+    color: white;
+}
+.rowB{
+    display: flex;
+    justify-content: right;
+}
+.rowB span{
+    width: min-content;
+}
+.rowB span:hover, .row span:hover{
+    border-color: black;
+}
+
+/* КОНТЕНТ */
+.content {
+    width: 100vw;
+    height: 100vh;
+}
+.block{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block1{
+    top: 0;
+}
+.block2{
+    display: none;
+}
+.block3{
+    display: none;
+}
+
+/* БЛОК 1 - НАЗВАНИЕ */
+.block1{
+    color: black;
+    flex-direction: column;
+}
+.block1 p {
+    text-align: center;
+    font-size: 60px;
+}
+.block1 i{
+    position: relative;
+    bottom: -30%;
+    font-size: 90px;
+    cursor: pointer;
+    animation: arrowUp 0.8s infinite linear;
+}
+@keyframes arrowUp{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(15px);}
+    100%{transform: translateY(0);}
+  }
+
+/* БЛОК 2 - ОПИСАНИЕ */
+.block2 {
+    width: 80%;
+    margin: 0 10%;
+    color: black;
+}
+
+.block2 .des,
+.block2 .video {
+    width: 50%;
+}
+
+.block2 .des {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    font-size: 26px;
+}
+
+.block2 .video {
+    padding-left: 15px;
+}
+
+.block2 .video video {
+    width: 100%;
+}
+
+/* БЛОК 3 - СЛАЙДЕР */
+.block3 {
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.block3 .slideNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.block3 .navBtnLeft,.block3 .navBtnRight{
+    height: 100%;
+}
+.block3 .navBtnLeft .btn,.block3 .navBtnRight .btn{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/btn.PNG);
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.block3 .navBtnLeft .btn:active,.block3 .navBtnRight .btn:active{
+    background-image: linear-gradient(360deg, rgba(0,0,0,0.5) 8%, rgba(255,255,255,0) 100%),  url(../img/btn.PNG);
+}
+.block3 .navBtnLeft .btn img,.block3 .navBtnRight .btn img{
+    width: 50%;
+    cursor: pointer;
+}
+.block3 .navBtnRight .btn img{
+    transform: rotate(180deg);
+}
+.block3 .navDisplay{
+    width: 100%;
+    height: 100%;
+}
+.block3 .display, .block3 .numbers{
+    height: 50%;
+}
+.block3 .display{
+    display: flex;
+    background-color: rgb(161, 169, 6);
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 1) inset;
+    border: 2px solid black;
+    font-family: 'Numbers', Arial, Helvetica, sans-serif;
+}
+.block3 .display *{
+    font-family: 'Numbers', Arial, Helvetica, sans-serif;
+}
+.block3 .countNum, .block3 .nameNum{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+.block3 .numbers{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.block3 .numbers .btn{
+    background-image: url(../img/btn.PNG);
+    background-size: 100% 100%;
+    font-size: 40px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.block3 .numbers .btn:active{
+    background-image: linear-gradient(360deg, rgba(0,0,0,0.5) 8%, rgba(255,255,255,0) 100%),  url(../img/btn.PNG);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.block3 .arrow {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.block3 .arowLeft {
+    transform: rotate(180deg);
+}
+
+.block3 .listNumbers {
+    display: flex;
+}
+
+.block3 .listNumbers div {
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.block3 .slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid black;
+    background-image: url(../img/A-TyLJtsntU.jpg);
+}
+
+.mySlides {
+    position: relative;
+    padding: 0 5%;
+    display:flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../img/A-TyLJtsntU.jpg);
+    background-size: 100% 100%;
+}
+
+.text {
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.numbertext {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.block3 .title{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.block3 .slideInfo{
+    display: flex;
+}
+.block3 .des, .block3 .video{
+    width: 50%;
+}
+.block3 .des{
+    margin-right: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+}
+.block3 .video{
+    margin-left: 15px;
+}
+.block3 .video video{
+    width: 100%;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
